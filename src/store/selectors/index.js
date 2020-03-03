@@ -1,5 +1,6 @@
 import { createSelector } from 'reselect';
-import { orderBy } from 'lodash';
+import { chunk, orderBy } from 'lodash';
+import { formatDate } from '../../utils';
 
 export const getConsumers = (type) => ({ consumersState: { consumptions } }) => (
   type
@@ -36,5 +37,13 @@ export const filteredByDateSelector = (type) => createSelector(
 
       return date >= from && date <= to;
     })
+  },
+);
+
+export const chunkedTableDataSelector = (type) => createSelector(
+  [filteredByDateSelector(type), getTableRowPerPage],
+  (consumers, rowsPerPage) => {
+    const data = consumers.map((item) => ({ ...item, Date: formatDate(item.Date) }));
+    return data.length > 0 && rowsPerPage > 0 ? chunk(data, rowsPerPage) : data;
   },
 );
