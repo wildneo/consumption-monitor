@@ -96,3 +96,30 @@ export const weatherChartDataSelector = createSelector(
     }));
   },
 );
+
+export const priceChartDataSelector = createSelector(
+  [getConsumers('plants'), propertySelector('plants')('Price', Math.round)],
+  (consumers, priceList) => {
+    const groupByTemp = consumers.reduce((acc, item) => {
+      const { Consumption } = item;
+      const brickPrice = Math.round(item.Price);
+      const count = acc[brickPrice] ? acc[brickPrice].count + 1 : 1;
+      const object = acc[brickPrice]
+        ? {
+          ...acc[brickPrice],
+          brickPrice,
+          consumption: (acc[brickPrice].consumption * count + Consumption) / (count + 1),
+          test: (acc[brickPrice].consumption + Consumption),
+          count,
+        }
+        : { brickPrice, consumption: Consumption, count };
+
+      return { ...acc, [brickPrice]: object };
+    }, {});
+
+    return priceList.map((price) => ({
+      price: groupByTemp[price].brickPrice,
+      'Потребление': groupByTemp[price].consumption,
+    }));
+  },
+);
