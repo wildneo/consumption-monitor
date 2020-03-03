@@ -69,3 +69,30 @@ export const totalChartDataSelector = createSelector(
     return timeline.map((date) => groupByDate[date]);
   },
 );
+
+export const weatherChartDataSelector = createSelector(
+  [getConsumers('houses'), propertySelector('houses')('Weather', Math.round)],
+  (consumers, tempLine) => {
+    const groupByTemp = consumers.reduce((acc, item) => {
+      const { Consumption } = item;
+      const weather = Math.round(item.Weather);
+      const count = acc[weather] ? acc[weather].count + 1 : 1;
+      const object = acc[weather]
+        ? {
+          ...acc[weather],
+          weather,
+          consumption: (acc[weather].consumption * count + Consumption) / (count + 1),
+          test: (acc[weather].consumption + Consumption),
+          count,
+        }
+        : { weather, consumption: Consumption, count };
+
+      return { ...acc, [weather]: object };
+    }, {});
+
+    return tempLine.map((temp) => ({
+      weather: groupByTemp[temp].weather,
+      'Потребление': groupByTemp[temp].consumption,
+    }));
+  },
+);
