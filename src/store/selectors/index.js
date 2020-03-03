@@ -47,3 +47,25 @@ export const chunkedTableDataSelector = (type) => createSelector(
     return data.length > 0 && rowsPerPage > 0 ? chunk(data, rowsPerPage) : data;
   },
 );
+
+export const totalChartDataSelector = createSelector(
+  [getConsumers(), propertySelector()('Date')],
+  (consumers, timeline) => {
+    const groupByDate = consumers.reduce((acc, item) => {
+      const { Date: date, Consumption, Name } = item;
+      const total = 'Сумма';
+      const object = acc[date]
+        ? {
+          ...acc[date],
+          date: formatDate(date),
+          [Name]: Consumption,
+          [total]: acc[date][total] + Consumption
+        }
+        : { date: formatDate(date), [Name]: Consumption, [total]: Consumption };
+
+      return { ...acc, [date]: object };
+    }, {});
+
+    return timeline.map((date) => groupByDate[date]);
+  },
+);
