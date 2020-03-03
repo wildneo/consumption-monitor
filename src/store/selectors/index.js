@@ -24,3 +24,17 @@ export const propertySelector = (type) => (prop, fn) => createSelector(
     return orderBy(values);
   },
 );
+
+export const filteredByDateSelector = (type) => createSelector(
+  [getConsumers(type), getFilterDateInterval],
+  (consumers, filterDates) => {
+    const from = filterDates.from.setHours(0, 0, 0, 0);
+    const to = filterDates.to.setHours(0, 0, 0, 0);
+
+    return consumers.filter((item) => {
+      const date = new Date(item.Date);
+
+      return date >= from && date <= to;
+    })
+  },
+);
