@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.js": "https://wildneo.github.io/consumption-monitor/static/js/main.a05c2062.chunk.js",
-    "main.js.map": "https://wildneo.github.io/consumption-monitor/static/js/main.a05c2062.chunk.js.map",
+    "main.js": "https://wildneo.github.io/consumption-monitor/static/js/main.86632c44.chunk.js",
+    "main.js.map": "https://wildneo.github.io/consumption-monitor/static/js/main.86632c44.chunk.js.map",
     "runtime-main.js": "https://wildneo.github.io/consumption-monitor/static/js/runtime-main.7e4dda0e.js",
     "runtime-main.js.map": "https://wildneo.github.io/consumption-monitor/static/js/runtime-main.7e4dda0e.js.map",
     "static/css/2.87e4e4ed.chunk.css": "https://wildneo.github.io/consumption-monitor/static/css/2.87e4e4ed.chunk.css",
     "static/js/2.30eff3be.chunk.js": "https://wildneo.github.io/consumption-monitor/static/js/2.30eff3be.chunk.js",
     "static/js/2.30eff3be.chunk.js.map": "https://wildneo.github.io/consumption-monitor/static/js/2.30eff3be.chunk.js.map",
     "index.html": "https://wildneo.github.io/consumption-monitor/index.html",
-    "precache-manifest.c305d11adbaf5e9a162051ce1a09f540.js": "https://wildneo.github.io/consumption-monitor/precache-manifest.c305d11adbaf5e9a162051ce1a09f540.js",
+    "precache-manifest.2e29a24da2d155e24a15093a391cab48.js": "https://wildneo.github.io/consumption-monitor/precache-manifest.2e29a24da2d155e24a15093a391cab48.js",
     "service-worker.js": "https://wildneo.github.io/consumption-monitor/service-worker.js",
     "static/css/2.87e4e4ed.chunk.css.map": "https://wildneo.github.io/consumption-monitor/static/css/2.87e4e4ed.chunk.css.map",
     "static/js/2.30eff3be.chunk.js.LICENSE.txt": "https://wildneo.github.io/consumption-monitor/static/js/2.30eff3be.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.7e4dda0e.js",
     "static/css/2.87e4e4ed.chunk.css",
     "static/js/2.30eff3be.chunk.js",
-    "static/js/main.a05c2062.chunk.js"
+    "static/js/main.86632c44.chunk.js"
   ]
 }

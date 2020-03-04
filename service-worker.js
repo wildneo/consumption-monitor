@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "https://wildneo.github.io/consumption-monitor/precache-manifest.c305d11adbaf5e9a162051ce1a09f540.js"
+  "https://wildneo.github.io/consumption-monitor/precache-manifest.2e29a24da2d155e24a15093a391cab48.js"
 );
 
 self.addEventListener('message', (event) => {

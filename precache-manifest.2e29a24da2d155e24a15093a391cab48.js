@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "335df61a63f5e5a46cd42a86210a8e8f",
+    "revision": "bfdff323f30708a1447f1183630e6318",
     "url": "https://wildneo.github.io/consumption-monitor/index.html"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "https://wildneo.github.io/consumption-monitor/static/js/2.30eff3be.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a68cc6ad9aac2938a714",
-    "url": "https://wildneo.github.io/consumption-monitor/static/js/main.a05c2062.chunk.js"
+    "revision": "2e8e2f91cc7082921a65",
+    "url": "https://wildneo.github.io/consumption-monitor/static/js/main.86632c44.chunk.js"
   },
   {
     "revision": "e821ce56108bb08ec540",
